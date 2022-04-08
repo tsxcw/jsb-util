@@ -1,6 +1,6 @@
 {
   "name": "jsb-util",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "一个常用的js工具类",
   "main": "./src/index.js",
   "scripts": {

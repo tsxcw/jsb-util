@@ -45,7 +45,12 @@ var ac = jsbUtil.debounce(fn, 1000);//因为此处用了闭包，所以先赋值
 for (let i = 0; i < 100; i++) {
     ac();//不建议循环体内用使用
 }
-window.addEventListener("resize", ac);//监听窗口变化或者输入框事件中使用，
+window.addEventListener("resize", ac);//监听窗口变化或者输入框输入状态中使用，
+
+//截流功能 (方法名|回调函数) 间隔时间
+var ac = jsbUtil.throttle(fn, 1000);//因为此处用了闭包，所以先赋值给一个变量；
+setInterval(ac, 100);//应用场景输入框搜索，减少与后台查询次数
+
 
 ```
 

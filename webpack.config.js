@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require("fs");
-var package = fs.readFileSync("package.json", 'utf-8');
+let package = fs.readFileSync("package.json", 'utf-8');
 package = JSON.parse(package)
 module.exports = {
     mode: 'development',
@@ -20,12 +20,11 @@ module.exports = {
         }),
     ],
     output: {
-        filename: function (params) {
-            console.log(params)
-            if(params.runtime=='index'){
-                return `jsbUtil-V${package.version.replace(/\./g, "_")}.js`
+        filename: function ({runtime}) {
+            if (runtime === 'index') {
+                return `jsbUtil@${package.version}.js`
             }
-            return params.runtime+'.js'
+            return runtime + '.js'
         },
         path: path.resolve(__dirname, 'dist'),
         clean: true,

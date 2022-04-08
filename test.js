@@ -6,5 +6,5 @@ function log1() {
 }
 
 
-var ac = jsbUtil.debounce(log1, 1000)
-console.log(1)
+var ac = jsbUtil.throttle(log1, 1000);//因为此处用了闭包，所以先赋值给一个变量；
+
