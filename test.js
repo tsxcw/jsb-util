@@ -6,3 +6,5 @@ console.log(isMobile("12312312321"));
 
 import { isMail } from "./src/index";
 console.log(isMail(2132312312));
+
+console.log(jsbUtil.formatXss("<p onclick='alert(1)'>text</p>"));

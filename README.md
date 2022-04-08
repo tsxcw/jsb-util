@@ -7,7 +7,12 @@
 使用方式
 
 ```javascript
-import util from "jsbUtil"
+//全部引入
+import jsbUtil from "jsb-util"
+
+//单独使用方式
+import {isMobile,memory} from "jsb-util"
+isMobile("1300000000")
 
 //验证手机号是否符合规范
 jsbUtil.isMobile("13000000000")
@@ -25,6 +30,8 @@ jsbUtil.memory.del("ccUtil")//删除
 jsbUtil.memory.clear()//清空所有
 jsbUtil.memory.set("ccUtil", {a: 1}).del("ccUtil").clear().get("ccUtil")
 
+//基本的富文本xss过滤 特殊条件请看方法第二第三形参
+jsbUtil.formatXss("<p onclick='alert(1)'>text</p>")//<p>text</p>
 
 
 ```
