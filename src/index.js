@@ -33,7 +33,12 @@ const isMobileOrMail = (account) => {
     }
     return false;
 }
-
+/**
+ * @description:防抖
+ * @param fn 方法名|回调函数
+ * @param wait 前后间隔时间间距
+ * @returns {(function(): void)|*} 闭包方法
+ */
 const debounce = (fn, wait) => {
     var timer = null;
     return function () {
@@ -43,6 +48,8 @@ const debounce = (fn, wait) => {
         timer = setTimeout(fn, wait);
     }
 }
+
+
 exports.isMobileOrMail = isMobileOrMail;
 exports.isMobile = isMobile;
 exports.isMail = isMail;
