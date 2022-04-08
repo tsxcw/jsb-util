@@ -33,7 +33,6 @@ const isMobileOrMail = (account) => {
     return false;
 }
 
-
 exports.isMobileOrMail = isMobileOrMail;
 exports.isMobile = isMobile;
 exports.isMail = isMail;
@@ -44,6 +43,6 @@ module.exports.jsbUtil = {
     isMail,
     isMobile,
     isMobileOrMail,
-    memory,
-    formatXss
+    formatXss,
+    memory
 }

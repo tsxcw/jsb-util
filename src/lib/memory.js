@@ -76,4 +76,5 @@ class Memory {
     }
 }
 
-module.exports = new Memory();
+var memory = new Memory()
+module.exports = memory;

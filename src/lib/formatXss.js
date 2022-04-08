@@ -6,7 +6,7 @@ const xss = require("xss");
  * @param {array} attr 允许放行的标签属性标签
  * @return {string} htmlString
  */
-export const formatXss = (Html, format = [], attr = []) => {
+function formatXss(Html, format = [], attr = []){
     //允许通过的标签
     const tag = [
         "p",
@@ -46,14 +46,14 @@ export const formatXss = (Html, format = [], attr = []) => {
         })
     }
     let tmp = {};
-    console.log(tmp, can)
     for (let index = 0; index < tag.length; index++) {
         const element = tag[index];
         tmp[element] = can;
     }
-    return xss(Html, {
+    let text = xss(Html, {
         whiteList: tmp,
     });
+    return text;
 }
 
 module.exports = formatXss
