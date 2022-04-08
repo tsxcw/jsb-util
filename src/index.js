@@ -1,8 +1,7 @@
 const memory = require('./lib/memory')
-const formatXss = require("./lib/formatXss")
 const cookie = require("./lib/cookie")
 const util = require("./lib/util")
-
+const formatXss = require("./lib/formatXss")
 exports.isMobileOrMail = util.isMobileOrMail;
 exports.isMobile = util.isMobile;
 exports.isMail = util.isMail;
