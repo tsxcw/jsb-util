@@ -1,5 +1,6 @@
 const memory = require('./lib/memory')
 const formatXss = require("./lib/formatXss")
+const cookie = require("./lib/cookie")
 /**
  * @description:验证是否为手机账号
  * @param {string} Mobile 手机账号
@@ -36,13 +37,15 @@ const isMobileOrMail = (account) => {
 exports.isMobileOrMail = isMobileOrMail;
 exports.isMobile = isMobile;
 exports.isMail = isMail;
-exports.memory = memory
-exports.formatXss = formatXss
+exports.memory = memory;
+exports.formatXss = formatXss;
+exports.cookie = cookie;
 //将整个模块导出
 module.exports.jsbUtil = {
     isMail,
     isMobile,
     isMobileOrMail,
     formatXss,
-    memory
+    memory,
+    cookie
 }
