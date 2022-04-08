@@ -34,12 +34,22 @@ const isMobileOrMail = (account) => {
     return false;
 }
 
+const debounce = (fn, wait) => {
+    var timer = null;
+    return function () {
+        if (timer !== null) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(fn, wait);
+    }
+}
 exports.isMobileOrMail = isMobileOrMail;
 exports.isMobile = isMobile;
 exports.isMail = isMail;
 exports.memory = memory;
 exports.formatXss = formatXss;
 exports.cookie = cookie;
+exports.debounce = debounce;
 //将整个模块导出
 module.exports.jsbUtil = {
     isMail,
@@ -47,5 +57,6 @@ module.exports.jsbUtil = {
     isMobileOrMail,
     formatXss,
     memory,
-    cookie
+    cookie,
+    debounce
 }

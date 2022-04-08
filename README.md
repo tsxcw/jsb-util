@@ -33,13 +33,19 @@ jsbUtil.memory.set("ccUtil", {a: 1}).del("ccUtil").clear().get("ccUtil")
 
 //cookie基本管理
 jsbUtil.cookie.get("ccUtil");//获取key的内容
-jsbUtil.cookie.set("ccUtil", '1234', new Date());//第三参数为过期时间，默认会话有效期
+jsbUtil.cookie.set("ccUtil", '1234', new Date()); //设置参数  key value 过期时间
 jsbUtil.cookie.del("ccUtil");//删除指定key
 jsbUtil.cookie.clear();//清空当前站点cookie
 
 //基本的富文本xss过滤 特殊条件请看方法第二第三形参
 jsbUtil.formatXss("<p onclick='alert(1)'>text</p>")//<p>text</p>
 
+//防抖功能 (方法名|回调函数) 间隔时间
+var ac = jsbUtil.debounce(fn, 1000);//因为此处用了闭包，所以先赋值给一个变量；
+for (let i = 0; i < 100; i++) {
+    ac();//不建议循环体内用使用
+}
+window.addEventListener("resize", ac);//监听窗口变化或者输入框事件中使用，
 
 ```
 
