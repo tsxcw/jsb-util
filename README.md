@@ -52,6 +52,8 @@ var ac = jsbUtil.throttle(fn, 1000);//因为此处用了闭包，所以先赋值
 setInterval(ac, 100);//应用场景输入框搜索，减少与后台查询次数
 
 
+//复制文本到粘贴板
+jsbUtil.copyText("这是复制的内容")
 ```
 
 * 小提示：如果不明确使用方式可进入 **node_modules/jsb-util/src/index.js** 查看方法注释

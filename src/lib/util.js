@@ -62,7 +62,24 @@ const throttle = (fn, wait) => {
         }, wait)
     }
 }
-
+/**
+ * @description:复制字符串到粘贴板
+ * @param text 复制的字符串
+ * @return {void} void
+ */
+const copyText = async (text) => {
+    try {
+        await navigator.clipboard.writeText(text)
+    } catch (e) {
+        let input = document.createElement("textarea");
+        document.body.appendChild(input)
+        input.value = text
+        input.select()
+        document.execCommand("COPY");
+        input.remove();
+    }
+    return Promise.resolve(true);
+}
 module.exports = {
-    debounce, isMobileOrMail, isMail, isMobile, throttle
+    debounce, isMobileOrMail, isMail, isMobile, throttle, copyText
 }
